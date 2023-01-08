@@ -1,7 +1,21 @@
+let pos;
+let pallette = [];
+
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(2000, 1000);
+  background(0);
+  pos = createVector(width / 2, height / 2);
 }
 
 function draw() {
-  background(220);
+  fill(255);
+  noStroke();
+  rect(pos.x, pos.y, 5, 5);
+
+  pos.x += random(-5, 5);
+  pos.y += random(-5, 5);
+
+  if ((pos.x > width) | (pos.x < 0) | (pos.y > height) | (pos.y < 0)) {
+    pos = createVector(width / 2, height / 2);
+  }
 }
