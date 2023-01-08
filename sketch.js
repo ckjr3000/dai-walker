@@ -5,7 +5,7 @@ function preload() {
 }
 
 function setup() {
-  let canvas = createCanvas(2000, 1000);
+  let canvas = createCanvas(900, 900);
   background(0);
 
   pos = createVector(width / 2, height / 2);
@@ -17,8 +17,8 @@ function setup() {
 function draw() {
   let level = amp.getLevel();
 
-  let color = 255;
-  let size = map(level, 0, 1, 0, 200);
+  let color = map(level, 0, 0.2, 50, 255);
+  let size = map(level, 0, 0.2, 5, 50);
 
   fill(color);
   noStroke();
